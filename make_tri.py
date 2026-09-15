@@ -9,6 +9,8 @@ def plot_triangle(border = 100, width = 800, height = 700, w1 = 0.5, w2 = 0.3, w
     """"
     Generate a triangle with a 2D point inside 
     
+    Input parameters: shape border, width, and height. Weights corresponding to physical, analytical, and data-driven components.
+    
     """
     # Create empty RGB image initialized to white
     image = np.ones((height, width, 3), dtype=float)
@@ -98,12 +100,12 @@ def plot_triangle(border = 100, width = 800, height = 700, w1 = 0.5, w2 = 0.3, w
 # Display result
     plt.figure(figsize=(8, 7))
     plt.scatter(point[0], point[1])
-    # plt.annotate(text = , xy = left_base)
-    # plt.annotate(text = , xy = right_base)
-    # plt.annotate(text = , xy = top)
+    plt.annotate(text = "Physical", xy = green_point)
+    plt.annotate(text = "Analytical", xy = red_point)
+    plt.annotate(text = "Data-Driven", xy = blue_point)
+    plt.annotate(text = "My research project", xy = (point[0], point[1]))
     plt.imshow(image)
     plt.axis("off")
     plt.show()
 
-plot_triangle()
-
+#plot_triangle()
