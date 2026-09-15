@@ -2,14 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Image size
-width = 800
-height = 700
+#width = 800
+#height = 700
 
-w1 = 0.3
-w2 = 0.7
-w3 = 0.9
-
-def plot_triangle(border = 100, width = width, height = height):
+def plot_triangle(border = 100, width = 800, height = 700, w1 = 0.5, w2 = 0.3, w3 = 0.2):
+    """"
+    Generate a triangle with a 2D point inside 
+    
+    """
     # Create empty RGB image initialized to white
     image = np.ones((height, width, 3), dtype=float)
 
@@ -92,7 +92,7 @@ def plot_triangle(border = 100, width = width, height = height):
                 image[y, x] = color
             
             # get coordinate for point
-                point = add_point(w1, w2, w3)
+    point = add_point(w1, w2, w3)
 
             
 # Display result
@@ -105,5 +105,5 @@ def plot_triangle(border = 100, width = width, height = height):
     plt.axis("off")
     plt.show()
 
-
+plot_triangle()
 
